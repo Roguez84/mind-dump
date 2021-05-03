@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+#Data for Post
+# create_table "posts", force: :cascade do |t|
+#     t.text "content"
+#     t.integer "status"
+#     t.string "tags"
+#     t.datetime "created_at", null: false
+#     t.datetime "updated_at", null: false
+#   end

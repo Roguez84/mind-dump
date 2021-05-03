@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  http_basic_authenticate_with name: "qwerty", password: "123456"
 
   # GET /posts or /posts.json
   def index
