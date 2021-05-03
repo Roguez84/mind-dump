@@ -4,7 +4,7 @@
 
 <hr>
 <%# <%= link_to 'New Post', new_post_path %>
-<a class="btn btn-info text-white" href="<%= new_post_path %>" role="button">New Post</a>
+<a class="btn btn-dark text-white" href="<%= new_post_path %>" role="button">New Post</a>
 
 <hr>
 
@@ -14,19 +14,18 @@
 
 <% @posts.each do |post| %>
 
-    <div class="card text-center text-white bg-info mb-3">
+    <div class="card text-center text-white bg-dark mb-3">
       <div class="card-header">
-        <%= post.tags %>
+        tags: <%= post.tags %>
       </div>
-      <div class="card-body bg-info">
-        <h5 class="card-title">This card has no title </h5>
+      <div class="card-body bg-dark">
+        <h5 class="card-title">Created on: <%= "#{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}"%> </h5>
         <p class="card-text"><%= post.content %></p>
       </div>
       <div class="card-footer text-muted">
         <td><%= link_to 'Show', post %></td>
-        <a class="btn btn-dark text-white" href="<%= post %>" role="button">Show</a>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <a class="btn btn-dark text-white" href="<%= edit_post_path(post) %>" role="button">Edit</a>
+        <a class="btn btn-info text-white" href="<%= edit_post_path(post) %>" role="button">Edit</a>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
     </div>
