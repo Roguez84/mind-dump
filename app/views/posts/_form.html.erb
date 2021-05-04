@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.label :status, "Status" %>
+    <%= form.select :status, options_for_select(Post.statuses.keys),{},{class: "form-control"} %>
   </div>
 
   <div class="field">

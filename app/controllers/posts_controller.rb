@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  http_basic_authenticate_with name: "qwerty", password: "123456"
+  http_basic_authenticate_with name: "qwerty", password: "123456", except: :index
+  
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -66,5 +67,7 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:content, :status, :tags)
+      #params.require(:post).permit(:content, :status_str, :tags)
+      #@status = Hash[params[:status_str].map { |k,v| [k, v.to_i ]}]
     end
 end

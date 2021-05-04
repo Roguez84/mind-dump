@@ -16,7 +16,9 @@
 
     <div class="card text-center text-white bg-dark mb-3">
       <div class="card-header">
-        tags: <%= post.tags %>
+        Tags: <%= post.tags %>
+        <br>
+        Status: <%= post.status %>
       </div>
       <div class="card-body bg-dark">
         <h5 class="card-title">Created on: <%= "#{post.created_at.day}/#{post.created_at.month}/#{post.created_at.year}"%> </h5>
